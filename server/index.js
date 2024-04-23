@@ -27,13 +27,15 @@ app.use(express.urlencoded({ extended: true }))
 app.use("/api/v1", tempRouter)
 
 console.log(process.env.DB_URI)
-console.log(path.resolve(__dirname, "../view/dist/index.html"))
-app.use(express.static(path.join(__dirname, "../view/dist")))
+// console.log(path.resolve(__dirname, "../view/dist/index.html"))
+app.use(express.static(path.join(__dirname, "./view")))
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../view/dist/index.html"))
+  res.sendFile(path.resolve(__dirname, "./view/index.html"))
 })
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
-  console.log(`http://localhost:${PORT}`)
+  console.log(
+    process.env.NODE_ENV === "production" ? window.location.origin : `http://localhost:${PORT}`
+  )
 })
