@@ -189,7 +189,7 @@ const DataTable = () => {
     <>
       <div className='w-full flex flex-wrap justify-end py-3 gap-4 text-sm'>
         <div className={`top_filter_all ${state.theme === "light" ? "top_filter_light" : "top_filter_dark"}`}>
-          <label className='bg-slate-700 text-white h-full flex items-center p-2'>
+          <label className='bg-slate-800 text-white h-full flex items-center p-2'>
             End Year
           </label>
           <input
@@ -217,7 +217,7 @@ const DataTable = () => {
           )}
         </div>
         <div className={`top_filter_all ${state.theme === "light" ? "top_filter_light" : "top_filter_dark"}`}>
-          <label className='bg-slate-700 text-white h-full flex items-center p-2'>
+          <label className='bg-slate-800 text-white h-full flex items-center p-2'>
             Sector
           </label>
           <select
@@ -236,7 +236,7 @@ const DataTable = () => {
           </select>
         </div>
         <div className={`top_filter_all ${state.theme === "light" ? "top_filter_light" : "top_filter_dark"}`}>
-          <label className='bg-slate-700 text-white h-full flex items-center p-2'>
+          <label className='bg-slate-800 text-white h-full flex items-center p-2'>
             Topic
           </label>
           <input
@@ -264,7 +264,7 @@ const DataTable = () => {
           )}
         </div>
         <div className={`top_filter_all ${state.theme === "light" ? "top_filter_light" : "top_filter_dark"}`}>
-          <label className='bg-slate-700 text-white h-full flex items-center p-2'>
+          <label className='bg-slate-800 text-white h-full flex items-center p-2'>
             Insight
           </label>
           <input
@@ -297,12 +297,12 @@ const DataTable = () => {
         <h1 className="text-lg font-semibold">All Insights</h1>
       </div>
       <div className='w-full rounded-md border-x border-slate-300 overflow-auto'>
-        <table className={`w-full border-0 border-collapse ${state.theme === "light" ? "bg-white text-black" : "bg-slate-600 text-white"} text-sm`}>
+        <table className={`w-full border-0 border-collapse ${state.theme === "light" ? "bg-white text-black" : "bg-slate-700 text-white"} text-sm`}>
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr
                 key={headerGroup.id}
-                className='border border-slate-500 bg-slate-700 text-white'
+                className='border border-slate-500 bg-slate-800 text-white'
               >
                 {headerGroup.headers.map((header) => (
                   <th
@@ -362,9 +362,9 @@ const DataTable = () => {
             ))}
           </tbody>
         </table>
-        <div className="w-full mt-3 p-3">
-          <Pagination count={state.totalPages} variant="outlined" shape="rounded" page={state.currentPage} onChange={handlePageChange} />
-        </div>
+      </div>
+      <div className="w-full mt-3 p-3">
+        <Pagination count={state.totalPages} variant="outlined" shape="rounded" page={state.currentPage} onChange={handlePageChange} />
       </div>
       <div className='w-full'>
         {state.loading && (

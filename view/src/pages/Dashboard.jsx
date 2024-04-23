@@ -23,6 +23,7 @@ const Dashboard = () => {
   const [end_year, setEndYear] = useState("")
   const [endYearFilterTerm, setEndYearFilterTerm] = useState("")
 
+  console.log(window.location.origin);
 
   const fetchUser = async (d) => {
     const { data } = await fetchUserData(d);
