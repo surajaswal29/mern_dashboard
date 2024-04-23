@@ -1,5 +1,6 @@
 import tempModel from "../model/tempModel.js"
 
+// get all data
 export const getAllTempData = async (req, res, next) => {
   try {
     //console.log(req.body)
@@ -182,50 +183,7 @@ export const getAllInsightData = async (req, res, next) => {
   }
 }
 
-
-// export const getIntensityData = async (req, res, next) => {
-//   try {
-//     const response = await tempModel.find()
-
-//     let end_year = new Set()
-
-//     response.forEach((item) => {
-//       if (!end_year.has(item.end_year)) {
-//         end_year.add(item.end_year)
-//       }
-//     })
-
-//     const endYearData = [...end_year].sort((a, b) => a - b)
-
-//     const final = endYearData.map((item) => {
-//       return {
-//         end_year: item,
-//         intensity: response
-//           .filter((data) => data.end_year === item)
-//           .reduce((a, c) => a + c.intensity, 0),
-//       }
-//     })
-
-//     if (response) {
-//       return res.status(200).json({
-//         status: "success",
-//         data: final,
-//       })
-//     } else {
-//       return res.status(404).json({
-//         status: "failed",
-//         message: "No data found",
-//       })
-//     }
-//   } catch (error) {
-//     //console.log(error)
-//     return res.status(500).json({
-//       status: "failed",
-//       message: "Server error",
-//     })
-//   }
-// }
-
+// get dashboard analytics data
 export const getDashboardData = async (req, res, next) => {
   try {
     const { end_year, sector, country } = req.body
