@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bg_image {
-  background-image: url("bg-2.jpg");
+  background-image: url("https://res.cloudinary.com/dzfc0ty7q/image/upload/v1713860446/green-app/bg-3_cxq8px.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
