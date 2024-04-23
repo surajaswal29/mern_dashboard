@@ -35,7 +35,5 @@ app.get("*", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
-  console.log(
-    process.env.NODE_ENV === "production" ? window.location.origin : `http://localhost:${PORT}`
-  )
+  console.log(`http://localhost:${PORT}`)
 })
